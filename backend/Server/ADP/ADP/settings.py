@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,11 +77,15 @@ WSGI_APPLICATION = 'ADP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'AwesomeDataBase',
-        'USER': 'root',
-        'PASS': 'root',
-        'HOST': '127.0.0.1',
+        'NAME': 'ADP',
+        'USER': 'postgres',
+        'PASS': 'postgres',
+        'HOST': '',
         'PORT': '5432',
+    },
+    'sqlite': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'server.sqlite3'),
     }
 }
 
